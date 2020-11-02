@@ -1,4 +1,4 @@
-#sishi-site/.vs
-#sishi-site/bin
-#sishi-site/obj
-#sishi-site/packages
+sishi-site/.vs
+sishi-site/bin
+sishi-site/obj
+sishi-site/packages
