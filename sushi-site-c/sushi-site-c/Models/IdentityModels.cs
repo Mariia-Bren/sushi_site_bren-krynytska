@@ -21,9 +21,12 @@ namespace sushi_site_c.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AppConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
+
 
         public static ApplicationDbContext Create()
         {
