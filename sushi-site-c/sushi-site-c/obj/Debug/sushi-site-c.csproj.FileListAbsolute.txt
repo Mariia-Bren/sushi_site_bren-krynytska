@@ -216,3 +216,5 @@ D:\OA\Site___Suushi\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debu
 D:\OA\Site___Suushi\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debug\sushi-site-c.pdb
 D:\OA\Site___Suushi\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debug\sushi_site_c.Migrations.InitialMigration.resources
 D:\OA\Site___Suushi\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debug\sushi-site-c.csproj.GenerateResource.cache
+D:\sushi_site\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debug\sushi_site_c.Migrations.InitialMigration.resources
+D:\sushi_site\sushi_site_bren-krynytska\sushi-site-c\sushi-site-c\obj\Debug\sushi-site-c.csproj.GenerateResource.cache
