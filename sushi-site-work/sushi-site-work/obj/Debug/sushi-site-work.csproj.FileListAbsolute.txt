@@ -87,3 +87,4 @@ D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\rosl
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\roslyn\System.Memory.dll
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\roslyn\System.Numerics.Vectors.dll
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\obj\Debug\sushi-site-work.csprojAssemblyReference.cache

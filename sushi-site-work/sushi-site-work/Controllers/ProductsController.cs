@@ -40,7 +40,7 @@ namespace sushi_site_work.Controllers
         public ActionResult Create()
         {
             ViewBag.SubCategoryId = new SelectList(db.subCategories, "Id", "Name");
-            ViewBag.CategoryList = new SelectList(db.categories, "Id","Name");
+            ViewBag.CategoryList = db.categories.ToList();
             return View();
         }
 
