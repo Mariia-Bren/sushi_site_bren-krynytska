@@ -1,0 +1,66 @@
+﻿@model IEnumerable<sushi_site_work.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Продукти</h2>
+
+<p>
+    @Html.ActionLink("Додати новий продукт", "Create")
+</p>
+
+<!-- @Html.DisplayNameFor(model => model.SubCategory.Name)
+
+  @Html.DisplayNameFor(model => model.Name)
+
+  @Html.DisplayNameFor(model => model.Description)
+
+  @Html.DisplayNameFor(model => model.Cost)
+
+  @Html.DisplayNameFor(model => model.PhotoPath)-->
+
+
+@foreach (var item in Model)
+{
+
+    <div class="well">
+        <div>
+            <div>
+                <img src="@item.PhotoPath" width="200px" alt="" />
+                <h3>
+                    <strong>
+                        @Html.DisplayFor(modelItem => item.SubCategory.Name)
+                    </strong>
+                </h3>
+                <strong>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </strong>
+                <h4>
+                    <p>
+                        Склад:
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                </h4>
+                <div>
+                    <strong>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Cost)
+                            грн.
+                        </p>
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <span>
+
+            @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Переглянути", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
+
+        </span>
+
+    </div>
+}
+
