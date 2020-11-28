@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -33,7 +34,8 @@ namespace sushi_site_work.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Category> categories { get; set; }
+
+
         public DbSet<SubCategory> subCategories { get; set; }
         public DbSet<Product> products { get; set; }
         public DbSet<ProductImage> productImages { get; set; }

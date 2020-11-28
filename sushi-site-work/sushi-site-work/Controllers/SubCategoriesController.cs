@@ -17,8 +17,7 @@ namespace sushi_site_work.Controllers
         // GET: SubCategories
         public ActionResult Index()
         {
-            var subCategories = db.subCategories.Include(s => s.Category);
-            return View(subCategories.ToList());
+            return View(db.subCategories.ToList());
         }
 
         // GET: SubCategories/Details/5
@@ -39,7 +38,6 @@ namespace sushi_site_work.Controllers
         // GET: SubCategories/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.categories, "Id", "Name");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace sushi_site_work.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,CategoryId")] SubCategory subCategory)
+        public ActionResult Create([Bind(Include = "Id,Name,Description")] SubCategory subCategory)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace sushi_site_work.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.categories, "Id", "Name", subCategory.CategoryId);
             return View(subCategory);
         }
 
@@ -73,7 +70,6 @@ namespace sushi_site_work.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.categories, "Id", "Name", subCategory.CategoryId);
             return View(subCategory);
         }
 
@@ -82,7 +78,7 @@ namespace sushi_site_work.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,CategoryId")] SubCategory subCategory)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description")] SubCategory subCategory)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace sushi_site_work.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.categories, "Id", "Name", subCategory.CategoryId);
             return View(subCategory);
         }
 

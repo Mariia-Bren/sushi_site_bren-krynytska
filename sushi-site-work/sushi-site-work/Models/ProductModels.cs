@@ -6,19 +6,6 @@ using System.Web;
 
 namespace sushi_site_work.Models
 {
-    public class Category
-    {
-        public Category()
-        {
-            subCategories = new HashSet<SubCategory>();
-        }
-        public int Id { get; set; }
-        [Display(Name="Категорія")]
-        public string Name { get; set; }
-        [Display(Name = "Опис категорії")]
-        public string Description { get; set; }
-        public ICollection<SubCategory> subCategories { get; set; }
-    }
     public class SubCategory
     {
         public SubCategory()
@@ -26,13 +13,10 @@ namespace sushi_site_work.Models
             products = new HashSet<Product>();
         }
         public int Id { get; set; }
-        [Display(Name = "Підкатегорія")]        
+        [Display(Name = "Категорія")]        
         public string Name { get; set; }
-        [Display(Name = "Опис підкатегорії")]
+        [Display(Name = "Опис категорії")]
         public string Description { get; set; }
-        [Display(Name = "Категорія")]
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
         public ICollection<Product> products { get; set; }
     }
     public class Product
@@ -46,7 +30,7 @@ namespace sushi_site_work.Models
         public int Cost { get; set; }
         [Display(Name = "Фото")]
         public string PhotoPath { get; set; }
-        [Display(Name = "Підкатегорія")]
+        [Display(Name = "Категорія")]
         public int SubCategoryId { get; set; }
         public virtual SubCategory SubCategory { get; set; }
     }
