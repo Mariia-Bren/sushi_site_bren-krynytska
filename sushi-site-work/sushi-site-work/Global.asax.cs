@@ -1,3 +1,5 @@
+
+using sushi_site_work.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,10 @@ namespace sushi_site_work
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Users.Any();
+            }
         }
     }
 }
