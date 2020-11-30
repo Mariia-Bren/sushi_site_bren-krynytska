@@ -17,8 +17,9 @@ namespace sushi_site_work.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.products.Include(p => p.SubCategory);
-            return View(products.ToList());
+           var products = db.products.Include(p => p.SubCategory);
+           return View(products.ToList());
+           
         }
 
         // GET: Products/Details/5
@@ -141,5 +142,7 @@ namespace sushi_site_work.Controllers
             }
             base.Dispose(disposing);
         }
+      
+      
     }
 }

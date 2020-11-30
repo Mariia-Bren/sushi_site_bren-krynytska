@@ -35,6 +35,8 @@ namespace sushi_site_work.Models
         [Display(Name = "Категорія")]
         public int SubCategoryId { get; set; }
         public virtual SubCategory SubCategory { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
+
     }
     public class ProductImage
     {
@@ -52,23 +54,7 @@ namespace sushi_site_work.Models
         public System.DateTime DateCreated { get; set; }
         public virtual Product Product { get; set; }
     }
-    public partial class Order
-    {
-        public int OrderId { get; set; }
-        public string Username { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public decimal Total { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public List<OrderDetail> OrderDetails { get; set; }
-    }
+    
     public class OrderDetail
     {
         public int OrderDetailId { get; set; }
@@ -249,6 +235,8 @@ namespace sushi_site_work.Models
             }
             return context.Session[CartSessionKey].ToString();
         }
+       
+        
         // When a user has logged in, migrate their shopping cart to
         // be associated with their username
         public void MigrateCart(string userName)

@@ -81,5 +81,6 @@ namespace sushi_site_work.Controllers
             ViewData["CartCount"] = cart.GetCount();
             return PartialView("CartSummary");
         }
+
     }
 }

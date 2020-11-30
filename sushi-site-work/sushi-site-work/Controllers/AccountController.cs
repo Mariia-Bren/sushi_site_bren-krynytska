@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -146,7 +147,35 @@ namespace sushi_site_work.Controllers
         {
             return View();
         }
+        //
+        // POST: /Account/Register
+      /*  [HttpPost]
+        public ActionResult Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+                MembershipCreateStatus createStatus;
+                Membership.CreateUser(model.UserName, model.Password, model.Email,
+                       "question", "answer", true, null, out
+                       createStatus);
 
+                if (createStatus == MembershipCreateStatus.Success)
+                {
+                    MigrateShoppingCart(model.UserName);
+
+                    FormsAuthentication.SetAuthCookie(model.UserName, false /*
+                  createPersistentCookie );
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                }
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }*/
         //
         // POST: /Account/Register
         [HttpPost]
@@ -162,11 +191,9 @@ namespace sushi_site_work.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -390,16 +417,47 @@ namespace sushi_site_work.Controllers
             return View(model);
         }
 
+         //
+         // POST: /Account/LogOff
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public ActionResult LogOff()
+         {
+             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+             return RedirectToAction("Index", "Home");
+         }
         //
-        // POST: /Account/LogOff
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        // POST: /Account/LogOn
+      /*  [HttpPost]
+        public ActionResult LogOn(LogOn model, string returnUrl)
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
-        }
+            if (ModelState.IsValid)
+            {
+                if (Membership.ValidateUser(model.UserName, model.Password))
+                {
+                    MigrateShoppingCart(model.UserName);
 
+                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1
+                        && returnUrl.StartsWith("/")
+                        && !returnUrl.StartsWith("//") &&
+                        !returnUrl.StartsWith("/\\"))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                }
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }*/
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
@@ -486,5 +544,13 @@ namespace sushi_site_work.Controllers
             }
         }
         #endregion
+        private void MigrateShoppingCart(string UserName)
+        {
+            // Associate shopping cart items with logged-in user
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            cart.MigrateCart(UserName);
+            Session[ShoppingCart.CartSessionKey] = UserName;
+        }
     }
 }

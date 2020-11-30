@@ -1,8 +1,10 @@
-﻿using System;
+﻿using sushi_site_work.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace sushi_site_work.Controllers
 {
@@ -26,5 +28,6 @@ namespace sushi_site_work.Controllers
 
             return View();
         }
+
     }
 }
