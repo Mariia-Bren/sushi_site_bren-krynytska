@@ -39,6 +39,8 @@ namespace sushi_site_work.Models
         public DbSet<SubCategory> subCategories { get; set; }
         public DbSet<Product> products { get; set; }
         public DbSet<ProductImage> productImages { get; set; }
-
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

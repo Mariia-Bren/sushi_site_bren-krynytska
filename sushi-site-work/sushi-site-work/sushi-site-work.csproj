@@ -173,9 +173,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SubCategoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +193,18 @@
     <Compile Include="Migrations\202011280034425_ar.cs" />
     <Compile Include="Migrations\202011280034425_ar.designer.cs">
       <DependentUpon>202011280034425_ar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011292324470_ndf.cs" />
+    <Compile Include="Migrations\202011292324470_ndf.designer.cs">
+      <DependentUpon>202011292324470_ndf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011292344592_kmk.cs" />
+    <Compile Include="Migrations\202011292344592_kmk.designer.cs">
+      <DependentUpon>202011292344592_kmk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011300000040_ndkf.cs" />
+    <Compile Include="Migrations\202011300000040_ndkf.designer.cs">
+      <DependentUpon>202011300000040_ndkf.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -369,10 +383,12 @@
     <Content Include="Views\SubCategories\Details.cshtml" />
     <Content Include="Views\SubCategories\Edit.cshtml" />
     <Content Include="Views\SubCategories\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Products\" />
+    <Folder Include="Views\Checkout\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -386,6 +402,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011280034425_ar.resx">
       <DependentUpon>202011280034425_ar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011292324470_ndf.resx">
+      <DependentUpon>202011292324470_ndf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011292344592_kmk.resx">
+      <DependentUpon>202011292344592_kmk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011300000040_ndkf.resx">
+      <DependentUpon>202011300000040_ndkf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

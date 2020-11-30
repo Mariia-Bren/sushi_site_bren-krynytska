@@ -25,42 +25,42 @@
 @foreach (var item in Model)
 {
 
-    <div class="well">
+<div class="well">
+    <div>
         <div>
-            <div>
-                <img src="@item.PhotoPath" width="200px" alt="" />
-                <h3>
-                    <strong>
-                        @Html.DisplayFor(modelItem => item.SubCategory.Name)
-                    </strong>
-                </h3>
+            <img src="@item.PhotoPath" width="200px" alt="" />
+            <h3>
                 <strong>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.SubCategory.Name)
                 </strong>
-                <h4>
-                    <p>
-                        Склад:
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                </h4>
-                <div>
-                    <strong>
-                        <p>
-                            @Html.DisplayFor(modelItem => item.Cost)
-                            грн.
-                        </p>
-                    </strong>
-                </div>
+            </h3>
+            <strong>
+                @Html.DisplayFor(modelItem => item.Name)
+            </strong>
+            <h4>
+                <p>
+                    Склад:
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+            </h4>
+            <div>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                    грн.
+                </p>
             </div>
         </div>
-        <span>
-
-            @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Переглянути", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
-
-        </span>
-
     </div>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart","ShoppingCart", new { id = item.Id }, "")
+    </p>
+    <span>
+
+        @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Переглянути", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
+
+    </span>
+</div>
 }
 
