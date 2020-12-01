@@ -127,19 +127,6 @@ namespace sushi_site_work.Controllers
             }
             base.Dispose(disposing);
         }
-        //
-        // GET: /Store/GenreMenu
-        [ChildActionOnly]
-        public ActionResult SubCategoriesMenu()
-        {
-            var subCategories = db.subCategories.ToList();
-            return PartialView(subCategories);
-        }
-        public ActionResult Browse(string subCategories)
-        {
-            var subCategoriesModel = new SubCategory { Name = subCategories };
-            return View(subCategoriesModel);
-        }
-     
+       
     }
 }

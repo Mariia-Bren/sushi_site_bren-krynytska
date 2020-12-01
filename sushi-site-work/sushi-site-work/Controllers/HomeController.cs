@@ -10,9 +10,15 @@ namespace sushi_site_work.Controllers
 {
     public class HomeController : Controller
     {
+
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            // Get most popular albums
+            var albums = GetTopSellingProducts(3);
+
+            return View(albums);
         }
 
         public ActionResult About()
@@ -27,6 +33,13 @@ namespace sushi_site_work.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        private List<Product> GetTopSellingProducts(int count)
+        {
+           return db.products
+                .OrderByDescending(a => a.OrderDetails.Count())
+                .Take(count)
+                .ToList();
         }
 
     }

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<sushi_site_work.Models.SubCategory>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    @foreach (var subCategories in Model)
+    {<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+             <a class="nav-link"> @Html.ActionLink(subCategories.Name, "Browse", "Store", new { SubCategory = subCategories.Name }, null)</a>
+
+         </div>
+        </div>}
+
+
+</nav>

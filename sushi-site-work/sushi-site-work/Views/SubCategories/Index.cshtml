@@ -8,16 +8,6 @@
 <h2>Категорії</h2>
 
 
-<ul>
-    @foreach (var genre in Model)
-    {
-        <li>
-            @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })
-    </li>
-}
-</ul>
-
-
 <p>
     @Html.ActionLink("Створити нову категорію", "Create")
 </p>

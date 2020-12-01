@@ -115,3 +115,5 @@ D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\Syst
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\System.Threading.Channels.xml
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\bin\System.Threading.Tasks.Extensions.xml
 D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\obj\Debug\sushi_site_work.Migrations.gjhf.resources
+D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\obj\Debug\sushi_site_work.Migrations.aaaaa.resources
+D:\sushi_site\sushi_site_bren-krynytska\sushi-site-work\sushi-site-work\obj\Debug\sushi_site_work.Migrations.fdfhjgk.resources
