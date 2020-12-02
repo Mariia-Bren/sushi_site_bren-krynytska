@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Cart Summary";
+}
+<div class="d-flex justify-content-endt">
+    <div class="p-2 bd-highlight">
+        @Html.ActionLink("Кошик (" + ViewData["CartCount"] + ")", "Index", "ShoppingCart", new { id = "cart-status" })
+</div>
+    </div>

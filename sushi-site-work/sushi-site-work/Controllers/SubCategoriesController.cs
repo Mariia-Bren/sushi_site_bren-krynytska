@@ -17,7 +17,11 @@ namespace sushi_site_work.Controllers
         // GET: SubCategories
         public ActionResult Index()
         {
-            return View(db.subCategories.ToList());
+           
+                var genres = db.subCategories.ToList();
+                return View(genres);
+           
+            //return View(db.subCategories.ToList());
         }
 
         // GET: SubCategories/Details/5
@@ -123,5 +127,6 @@ namespace sushi_site_work.Controllers
             }
             base.Dispose(disposing);
         }
+       
     }
 }

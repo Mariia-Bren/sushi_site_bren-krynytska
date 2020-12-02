@@ -1,0 +1,24 @@
+﻿@model IEnumerable<sushi_site_work.Models.SubCategory>
+@{
+    ViewBag.Title = "Store";
+}
+@{Html.RenderAction("SubCategoriesMenu", "Store");}
+
+
+<div class="card-body">
+
+    <h3 class="text-md-center text-warning font-weight-bold">Магазин</h3>
+</div>
+<p>
+    Наразі доступно @Model.Count()
+    категорії:
+</p>
+
+@foreach (var subCategories in Model)
+{
+    @Html.ActionLink(subCategories.Name, "Browse", "Store", new { SubCategoriesModel = subCategories.Name }, null)
+
+}
+
+
+

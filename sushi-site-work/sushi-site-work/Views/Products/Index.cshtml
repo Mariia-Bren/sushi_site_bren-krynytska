@@ -4,63 +4,71 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
+@{Html.RenderAction("SubCategoriesMenu", "Store");}
+<div class="card-body">
 
-<h2>Продукти</h2>
+    <h3 class="text-md-center text-warning font-weight-bold">Продукти</h3>
+    </div>
+    <div class="card-body">
+        <button type="button" class="btn btn-outline-dark  align-items-sm-center  btn-block" style="margin:auto; width:300px;">
+            <a class="font-weight-bold" href=@Html.ActionLink("Додати новий продукт", "Create")
+</a>
+        </button>
+    </div>
 
-<p>
-    @Html.ActionLink("Додати новий продукт", "Create")
-</p>
+    <!-- @Html.DisplayNameFor(model => model.SubCategory.Name)
 
-<!-- @Html.DisplayNameFor(model => model.SubCategory.Name)
+      @Html.DisplayNameFor(model => model.Name)
 
-  @Html.DisplayNameFor(model => model.Name)
+      @Html.DisplayNameFor(model => model.Description)
 
-  @Html.DisplayNameFor(model => model.Description)
+      @Html.DisplayNameFor(model => model.Cost)
 
-  @Html.DisplayNameFor(model => model.Cost)
+      @Html.DisplayNameFor(model => model.PhotoPath)-->
+    <div class="card-body">
 
-  @Html.DisplayNameFor(model => model.PhotoPath)-->
+        <div class="row ">
 
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card align-items-sm-center" style="width: 18rem; border:0;">
 
-@foreach (var item in Model)
-{
+                        <img src="@item.PhotoPath" class="card-img-top" style="width:200px;" />
+                        <div class="card-body">
 
-    <div class="well">
-        <div>
-            <div>
-                <img src="@item.PhotoPath" width="200px" alt="" />
-                <h3>
-                    <strong>
-                        @Html.DisplayFor(modelItem => item.SubCategory.Name)
-                    </strong>
-                </h3>
-                <strong>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </strong>
-                <h4>
-                    <p>
-                        Склад:
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                </h4>
-                <div>
-                    <strong>
-                        <p>
-                            @Html.DisplayFor(modelItem => item.Cost)
-                            грн.
-                        </p>
-                    </strong>
+                            <strong>
+                                @Html.DisplayFor(modelItem => item.SubCategory.Name)
+                            </strong>
+
+                            <strong>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </strong>
+
+                            <p class="card-text font-weight-light">
+                                Склад:
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </p>
+
+                            <p class="card-text font-weight-normal">
+                                @Html.DisplayFor(modelItem => item.Cost)
+                                грн.
+                            </p>
+                            <button type="button" class="btn btn-outline-warning  align-items-sm-center  btn-block" style="margin:auto;">
+
+                                <a class="text-dark font-weight-bolder">@Html.ActionLink("Додати до кошику", "AddToCart", "ShoppingCart", new { id = item.Id }, "")</a>
+                            </button>
+                            @Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+                            @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+                            <div class="btn-group btn-group-sm" role="group">
+                                @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Переглянути", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
-        <span>
-
-            @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Переглянути", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
-
-        </span>
 
     </div>
-}
-

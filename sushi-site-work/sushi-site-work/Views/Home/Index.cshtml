@@ -1,31 +1,66 @@
-﻿@{
+﻿@model List<sushi_site_work.Models.Product>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+@{Html.RenderAction("SubCategoriesMenu", "Store");}
+
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="100">
+            <img src="https://www.royalsushionline.com/wp-content/uploads/2015/07/sushi-sashimi-picture-a.jpg" class="d-block w-50" alt="">
+
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-warning font-weight-light">Ласкаво просимо!</h5>
+                <p class="text-dark font-weight-light">Працюємо та вдосконалюємося завдяки Вам! </p>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+<button type="button" class="btn btn-warning btn-block shadow-lg p-3 mb-5 align-items-sm-center" style="margin:auto; width:576px;"><a class="text-dark font-weight-light" href="@Url.Content("~/Store/")">У магазин</a></button>
+
+<div class="card-body">
+    <h3 class="text-md-center text-warning font-weight-light">Ваші найулюбленіші роли</h3>
+    <div class="card-body">
+
+        <div class="row ">
+
+            @foreach (var album in Model)
+            {<div class="col-md-4">
+                    <div class="card align-items-sm-center" style="width: 18rem; border:0;">
+
+                        <img src=@album.PhotoPath class="card-img-top" style="width:200px;" />
+                        <div class="card-body">
+                            <a href=@Url.Action("Details", "Store", new { id = album.Id })>
+                                <button type="button" class="btn btn-light font-weight-bold">
+                                    @album.Name<span class="badge badge-pill badge-warning align-text-bottom font-weight-bold" style="top:-4px;left:8px;">TOP</span>
+                                </button>
+
+                            </a>
+                            <p class="card-text font-weight-light">@album.Description</p>
+                            <p class="card-text font-weight-normal">@album.Cost грн.</p>
+                            <button type="button" class="btn btn-warning">
+                                <a class="font-weight-light font-weight-bold">@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = album.Id })</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
     </div>
 </div>
+
+

@@ -1,0 +1,20 @@
+﻿@model sushi_site_work.Models.SubCategory
+
+@{
+    ViewBag.Title = "BrowseList";
+}
+
+
+
+    <h3><em>@Model.Id</em> Альбом</h3>
+
+        @foreach (var album in Model.Products)
+        {
+            
+                <a href="@Url.Action("Details", new { id = album.Id })">
+                    <img  src="@album.PhotoPath" width="200px" alt=""/>
+                    <span>@album.Name</span>
+                </a>
+
+        }
+
