@@ -7,13 +7,13 @@ namespace sushi_site_work.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ar : IMigrationMetadata
+    public sealed partial class aaa : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ar));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(aaa));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011280034425_ar"; }
+            get { return "202012022200348_aaa"; }
         }
         
         string IMigrationMetadata.Source
