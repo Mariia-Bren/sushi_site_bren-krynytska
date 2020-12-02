@@ -89,10 +89,10 @@ namespace sushi_site_work.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return RedirectToAction("Надіслати код", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Помилкова спроба входу в систему.");
                     return View(model);
             }
         }
@@ -105,7 +105,7 @@ namespace sushi_site_work.Controllers
             // Require that the user has already logged in via username/password or external login
             if (!await SignInManager.HasBeenVerifiedAsync())
             {
-                return View("Error");
+                return View("Помилка");
             }
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
@@ -135,7 +135,7 @@ namespace sushi_site_work.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError("", "Невірний код.");
                     return View(model);
             }
         }
@@ -211,10 +211,10 @@ namespace sushi_site_work.Controllers
         {
             if (userId == null || code == null)
             {
-                return View("Error");
+                return View("Помилка");
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            return View(result.Succeeded ? "Підтвердити адресу електронної пошти" : "Помилка");
         }
 
         //
@@ -238,7 +238,7 @@ namespace sushi_site_work.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return View("Підтвердження забутого паролю");
                 }
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -266,7 +266,7 @@ namespace sushi_site_work.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            return code == null ? View("Error") : View();
+            return code == null ? View("Помилка") : View();
         }
 
         //
@@ -284,12 +284,12 @@ namespace sushi_site_work.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("Скинути підтвердження паролю", "Account");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("Скинути підтвердження паролю", "Account");
             }
             AddErrors(result);
             return View();
@@ -344,9 +344,9 @@ namespace sushi_site_work.Controllers
             // Generate the token and send it
             if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {
-                return View("Error");
+                return View("Помилка");
             }
-            return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+            return RedirectToAction("Перевірити код", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
         //
@@ -357,7 +357,7 @@ namespace sushi_site_work.Controllers
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Логін");
             }
 
             // Sign in the user with this external login provider if the user already has a login
@@ -369,7 +369,7 @@ namespace sushi_site_work.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
+                    return RedirectToAction("Надіслати код", new { ReturnUrl = returnUrl, RememberMe = false });
                 case SignInStatus.Failure:
                 default:
                     // If the user does not have an account, then prompt the user to create an account

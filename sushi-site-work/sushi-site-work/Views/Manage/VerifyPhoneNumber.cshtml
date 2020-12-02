@@ -1,11 +1,11 @@
 ﻿@model sushi_site_work.Models.VerifyPhoneNumberViewModel
 @{
-    ViewBag.Title = "Verify Phone Number";
+    ViewBag.Title = "Перевірити номер телефону";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("VerifyPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Перевірити номер телефону", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("phoneNumber", @Model.PhoneNumber)

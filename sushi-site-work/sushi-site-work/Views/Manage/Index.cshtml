@@ -1,21 +1,21 @@
 ﻿@model sushi_site_work.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Керувати обліковим записом";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4>Змініть налаштування облікового запису</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Пароль:</dt>
         <dd>
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Змінити свій пароль", "ChangePassword")
             }
             else
             {
@@ -23,7 +23,7 @@
             }
             ]
         </dd>
-        <dt>External Logins:</dt>
+        <dt>Зовнішні логіни:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Manage", "ManageLogins") ]

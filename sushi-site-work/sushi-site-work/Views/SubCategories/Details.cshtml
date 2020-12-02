@@ -1,7 +1,7 @@
 ﻿@model sushi_site_work.Models.SubCategory
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Деталі";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
 
@@ -30,6 +30,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Повернутися до списку", "Index")
 </p>
