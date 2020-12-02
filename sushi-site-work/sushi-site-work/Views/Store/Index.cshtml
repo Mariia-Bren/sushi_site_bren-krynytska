@@ -2,17 +2,23 @@
 @{
     ViewBag.Title = "Store";
 }
-<h3>Browse Genres</h3>
+@{Html.RenderAction("SubCategoriesMenu", "Store");}
+
+
+<div class="card-body">
+
+    <h3 class="text-md-center text-warning font-weight-bold">Магазин</h3>
+</div>
 <p>
-    Select from @Model.Count()
-    genres:
+    Наразі доступно @Model.Count()
+    категорії:
 </p>
-<ul>
-    @foreach (var subCategory in Model)
-    {
-        <li>
-            @Html.ActionLink(subCategory.Name, "Browse", new { subCategory = subCategory.Name })
-        </li>
-    }
-</ul>
+
+@foreach (var subCategories in Model)
+{
+    @Html.ActionLink(subCategories.Name, "Browse", "Store", new { SubCategoriesModel = subCategories.Name }, null)
+
+}
+
+
 

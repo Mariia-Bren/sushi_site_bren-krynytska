@@ -27,9 +27,7 @@
                 <li class="nav-item ">
                     <a class="nav-link font-weight-normal" href="/Checkout/AddressAndPayment/">Оплата</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-normal" href="/ShoppingCart/">Корзина</a>
-                </li>
+                @{Html.RenderAction("CartSummary", "ShoppingCart");}
 
                 @Html.Partial("_LoginPartial")
             </ul>

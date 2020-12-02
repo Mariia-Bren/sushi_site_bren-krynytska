@@ -4,25 +4,26 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-        <form class="form-inline">
+        <div class="d-flex justify-content-endt">
+            <div class="p-2 bd-highlight">
 
-            <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </a>
+                @Html.ActionLink("Вітаємо, " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </div>
+            <div class="p-2 bd-highlight" style="right:-20px">
 
-                <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-          
-        </form>
+                <a class="font-weight-normal" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </div>
+        </div>
     }
 }
 else
 {
-<form class="form-inline">
-
-    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
-        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
-        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
+    <div class="d-flex justify-content-endt">
+        <div class="p-2 bd-highlight">
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+        </div>
+        <div class="p-2 bd-highlight">
             @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-            </a>
-</form>
+        </div>
+    </div>
 }

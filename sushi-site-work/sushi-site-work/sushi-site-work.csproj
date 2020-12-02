@@ -258,6 +258,10 @@
     <Compile Include="Migrations\202012011812338_fdfhjgk.designer.cs">
       <DependentUpon>202012011812338_fdfhjgk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012021514484_asfghn.cs" />
+    <Compile Include="Migrations\202012021514484_asfghn.designer.cs">
+      <DependentUpon>202012021514484_asfghn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -493,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012011812338_fdfhjgk.resx">
       <DependentUpon>202012011812338_fdfhjgk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012021514484_asfghn.resx">
+      <DependentUpon>202012021514484_asfghn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

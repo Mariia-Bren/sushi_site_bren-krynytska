@@ -2,14 +2,11 @@
 @{
     ViewBag.Title = "Browse";
 }
-<h2>Browsing Genre: @Model.Name</h2>
-<ul>
-    @foreach (var product in Model.products)
-    {
+<h2>Категорія:@Model.Name </h2>
 
-        <li>
-            @Html.ActionLink(product.Name, "Details", new { id = product.Id })
-        </li>
-
-    }
-</ul>
+@foreach (var product in Model.Products)
+{
+    <li>
+        @Html.ActionLink(product.Name,"Details", new { id = product.Id })
+    </li>
+}

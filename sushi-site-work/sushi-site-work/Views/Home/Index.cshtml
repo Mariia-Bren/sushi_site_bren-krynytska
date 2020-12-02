@@ -6,7 +6,6 @@
 
 @{Html.RenderAction("SubCategoriesMenu", "Store");}
 
-
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-interval="100">
@@ -46,14 +45,14 @@
                         <div class="card-body">
                             <a href=@Url.Action("Details", "Store", new { id = album.Id })>
                                 <button type="button" class="btn btn-light font-weight-bold">
-                                      @album.Name<span class="badge badge-pill badge-warning align-text-bottom font-weight-bold" style="top:-4px;left:8px;">TOP</span>
+                                    @album.Name<span class="badge badge-pill badge-warning align-text-bottom font-weight-bold" style="top:-4px;left:8px;">TOP</span>
                                 </button>
 
                             </a>
                             <p class="card-text font-weight-light">@album.Description</p>
                             <p class="card-text font-weight-normal">@album.Cost грн.</p>
                             <button type="button" class="btn btn-warning">
-                                <a class="font-weight-light font-weight-bold" href=@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = album.Id })    ></a>
+                                <a class="font-weight-light font-weight-bold">@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = album.Id })</a>
                             </button>
                         </div>
                     </div>

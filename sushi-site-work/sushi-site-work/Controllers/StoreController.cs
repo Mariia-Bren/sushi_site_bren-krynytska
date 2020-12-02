@@ -20,14 +20,14 @@ namespace sushi_site_work.Controllers
         }
         //
         // GET: /Store/Browse
-        public ActionResult Browse(string subCategory)
+        public ActionResult Browse(string subCategories)
         {
             // Retrieve Genre and its Associated Albums from database
-            var subCategoryModel = db.subCategories.Single(s => s.Name == subCategory);
+            var subCategoriesModel = db.subCategories.Include("Products").Single(g => g.Name == subCategories);
 
-            return View(subCategoryModel);
+            return View(subCategoriesModel);
         }
-        //
+
         // GET: /Store/Details
         public ActionResult Details(int id)
         {
@@ -37,12 +37,13 @@ namespace sushi_site_work.Controllers
         }
 
         //
-        // GET: /Store/GenreMenu
+        // GET: /Store/SubCategoriesMenu
         [ChildActionOnly]
         public ActionResult SubCategoriesMenu()
         {
             var subCategories = db.subCategories.ToList();
             return PartialView(subCategories);
         }
+       
     }
 }

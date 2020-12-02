@@ -6,18 +6,15 @@
 
 
 
-<div class="subCategories">
-    <h3><em>@Model.Name</em> Products</h3>
+    <h3><em>@Model.Id</em> Альбом</h3>
 
-    <ul id="album-list">
-        @foreach (var album in Model.products)
+        @foreach (var album in Model.Products)
         {
-            <li>
+            
                 <a href="@Url.Action("Details", new { id = album.Id })">
                     <img  src="@album.PhotoPath" width="200px" alt=""/>
                     <span>@album.Name</span>
                 </a>
-            </li>
+
         }
-    </ul>
-</div>
+

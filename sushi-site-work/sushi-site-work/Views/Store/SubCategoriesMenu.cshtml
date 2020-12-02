@@ -4,7 +4,7 @@
     @foreach (var subCategories in Model)
     {<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
          <div class="navbar-nav">
-             <a class="nav-link font-weight-light"> @Html.ActionLink(subCategories.Name, "Browse", "Store", new { SubCategory = subCategories.Name }, null)</a>
+             <a class="nav-link font-weight-light"> @Html.ActionLink(subCategories.Name, "Browse", "Store", new { SubCategoriesModel = subCategories.Name }, null)</a>
 
          </div>
         </div>}
