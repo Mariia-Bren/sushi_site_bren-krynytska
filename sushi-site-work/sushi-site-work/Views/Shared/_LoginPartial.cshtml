@@ -6,11 +6,11 @@
         @Html.AntiForgeryToken()
         <form class="form-inline">
 
-            <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+            <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </a>
 
-                <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
           
         </form>
     }
@@ -19,9 +19,9 @@ else
 {
 <form class="form-inline">
 
-    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
         @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
-        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 font-weight-normal">
             @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
             </a>
 </form>
