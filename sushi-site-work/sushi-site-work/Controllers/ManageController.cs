@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using sushi_site_work.Models;
+using System.Data.Entity;
+
 
 namespace sushi_site_work.Controllers
 {

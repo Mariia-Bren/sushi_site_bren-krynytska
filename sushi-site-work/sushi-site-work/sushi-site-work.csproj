@@ -222,45 +222,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011170016070_mb.cs" />
-    <Compile Include="Migrations\202011170016070_mb.Designer.cs">
-      <DependentUpon>202011170016070_mb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011170055319_tk.cs" />
-    <Compile Include="Migrations\202011170055319_tk.Designer.cs">
-      <DependentUpon>202011170055319_tk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011280034425_ar.cs" />
-    <Compile Include="Migrations\202011280034425_ar.designer.cs">
-      <DependentUpon>202011280034425_ar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011292324470_ndf.cs" />
-    <Compile Include="Migrations\202011292324470_ndf.designer.cs">
-      <DependentUpon>202011292324470_ndf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011292344592_kmk.cs" />
-    <Compile Include="Migrations\202011292344592_kmk.designer.cs">
-      <DependentUpon>202011292344592_kmk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011300000040_ndkf.cs" />
-    <Compile Include="Migrations\202011300000040_ndkf.designer.cs">
-      <DependentUpon>202011300000040_ndkf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011301005404_gjhf.cs" />
-    <Compile Include="Migrations\202011301005404_gjhf.designer.cs">
-      <DependentUpon>202011301005404_gjhf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012011512051_aaaaa.cs" />
-    <Compile Include="Migrations\202012011512051_aaaaa.designer.cs">
-      <DependentUpon>202012011512051_aaaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012011812338_fdfhjgk.cs" />
-    <Compile Include="Migrations\202012011812338_fdfhjgk.designer.cs">
-      <DependentUpon>202012011812338_fdfhjgk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012021514484_asfghn.cs" />
-    <Compile Include="Migrations\202012021514484_asfghn.designer.cs">
-      <DependentUpon>202012021514484_asfghn.cs</DependentUpon>
+    <Compile Include="Migrations\202012022232351_dd.cs" />
+    <Compile Include="Migrations\202012022232351_dd.designer.cs">
+      <DependentUpon>202012022232351_dd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -471,42 +435,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011170016070_mb.resx">
-      <DependentUpon>202011170016070_mb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011170055319_tk.resx">
-      <DependentUpon>202011170055319_tk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011280034425_ar.resx">
-      <DependentUpon>202011280034425_ar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011292324470_ndf.resx">
-      <DependentUpon>202011292324470_ndf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011292344592_kmk.resx">
-      <DependentUpon>202011292344592_kmk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011300000040_ndkf.resx">
-      <DependentUpon>202011300000040_ndkf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011301005404_gjhf.resx">
-      <DependentUpon>202011301005404_gjhf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012011512051_aaaaa.resx">
-      <DependentUpon>202012011512051_aaaaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012011812338_fdfhjgk.resx">
-      <DependentUpon>202012011812338_fdfhjgk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021514484_asfghn.resx">
-      <DependentUpon>202012021514484_asfghn.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012022232351_dd.resx">
+      <DependentUpon>202012022232351_dd.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
