@@ -4,23 +4,25 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
+        <form class="form-inline">
 
-        <li class="nav-item">
-
-            <a class="nav-link" href="">
+            <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </a>
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-        </li>
+
+                <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+          
+        </form>
     }
 }
 else
 {
-    <li class="nav-item">
+<form class="form-inline">
 
-        <a class="nav-link" href="">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
-        <a>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</a>
-    </li>
+    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
+        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </a>
+</form>
 }
-
-
