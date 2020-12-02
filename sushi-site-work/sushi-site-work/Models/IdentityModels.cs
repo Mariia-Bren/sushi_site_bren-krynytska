@@ -26,7 +26,7 @@ namespace sushi_site_work.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("dbsushi-site", throwIfV1Schema: false)
         {
         }
 

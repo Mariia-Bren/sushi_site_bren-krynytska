@@ -20,7 +20,7 @@ namespace sushi_site_work.Models
         [Display(Name = "Опис категорії")]
         public string Description { get; set; }
         public ICollection<Product> products { get; set; }
-        public List<Product> Products { get; set; }
+        //public List<Product> Products { get; set; }
     }
     public class Product
     {
