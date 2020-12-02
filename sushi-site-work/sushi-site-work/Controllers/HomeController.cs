@@ -15,14 +15,14 @@ namespace sushi_site_work.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "На сторінці опису вашої програми.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Ваша контактна сторінка.";
 
             return View();
         }

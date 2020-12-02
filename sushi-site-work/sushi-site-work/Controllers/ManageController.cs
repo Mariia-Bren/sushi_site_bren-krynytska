@@ -55,12 +55,12 @@ namespace sushi_site_work.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                message == ManageMessageId.ChangePasswordSuccess ? "Ваш пароль був змінений."
+                : message == ManageMessageId.SetPasswordSuccess ? "Ваш пароль встановлено."
+                : message == ManageMessageId.SetTwoFactorSuccess ? "Ваш двофакторний автентифікатор встановлений."
+                : message == ManageMessageId.Error ? "Сталася помилка."
+                : message == ManageMessageId.AddPhoneSuccess ? "Ваш номер телефону було додано."
+                : message == ManageMessageId.RemovePhoneSuccess ? "Ваш номер телефону було видалено."
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -123,7 +123,7 @@ namespace sushi_site_work.Controllers
                 var message = new IdentityMessage
                 {
                     Destination = model.Number,
-                    Body = "Your security code is: " + code
+                    Body = "Ваш код безпеки: " + code
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
@@ -281,8 +281,8 @@ namespace sushi_site_work.Controllers
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-                : message == ManageMessageId.Error ? "An error has occurred."
+                message == ManageMessageId.RemoveLoginSuccess ? "Зовнішній логін видалено."
+                : message == ManageMessageId.Error ? "Сталася помилка."
                 : "";
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user == null)

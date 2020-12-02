@@ -1,11 +1,11 @@
 ﻿@model sushi_site_work.Models.AddPhoneNumberViewModel
 @{
-    ViewBag.Title = "Phone Number";
+    ViewBag.Title = "Номер телефону";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("AddPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Додати номер телефону", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Add a phone number</h4>
