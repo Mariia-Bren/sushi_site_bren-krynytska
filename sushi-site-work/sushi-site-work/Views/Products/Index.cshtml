@@ -11,9 +11,14 @@
     </div>
     <div class="card-body">
         <button type="button" class="btn btn-outline-dark  align-items-sm-center  btn-block" style="margin:auto; width:300px;">
+<<<<<<< HEAD
             <a class="font-weight-bold" >@Html.ActionLink("Додати новий продукт", "Create")
                
 </a>
+=======
+            <p class="font-weight-bold">@Html.ActionLink("Додати новий продукт", "Create")
+</p>
+>>>>>>> 2a0f6d207a3bafc77d0cb97b83e009a1ba2b4e00
         </button>
     </div>
 
@@ -57,7 +62,7 @@
                             </p>
                             <button type="button" class="btn btn-outline-warning  align-items-sm-center  btn-block" style="margin:auto;">
 
-                                <a class="text-dark font-weight-bolder">@Html.ActionLink("Додати до кошику", "AddToCart", "ShoppingCart", new { id = item.Id }, "")</a>
+                                <p class="text-dark font-weight-bolder">@Html.ActionLink("Додати до кошику", "AddToCart", "ShoppingCart", new { id = item.Id }, "")</p>
                             </button>
                             @Scripts.Render("~/scripts/jquery-1.10.2.min.js")
                             @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")

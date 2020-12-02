@@ -5,6 +5,7 @@
 
 <h2>Index</h2>
 
+<<<<<<< HEAD
 <p>
     @Html.ActionLink("Додати нову категорію", "Create")
 </p>
@@ -18,6 +19,27 @@
         </th>
         <th></th>
     </tr>
+=======
+    <h3 class="text-md-center text-warning font-weight-bold">Категорії</h3>
+</div>
+<div class="card-body">
+    <button type="button" class="btn btn-outline-dark  align-items-sm-center  btn-block" style="margin:auto; width:300px;">
+        <p class="font-weight-bold">@Html.ActionLink("Створити нову категорію", "Create")
+</p>
+</button>
+</div>
+<div class="card-body">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+>>>>>>> 2a0f6d207a3bafc77d0cb97b83e009a1ba2b4e00
 
     @foreach (var item in Model)
     {
